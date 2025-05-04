@@ -1,0 +1,67 @@
+{
+  "dashboard": "Asia Pacific Green Shipping 2045",
+  "uncertainties": {
+    "deep": [
+      {
+        "id": "fuel_dominance",
+        "description": "Whether hydrogen or ammonia becomes the dominant maritime fuel",
+        "impacts": ["Infrastructure retrofitting", "Standard harmonization", "Stranded assets"]
+      },
+      {
+        "id": "policy_alignment",
+        "description": "Whether regional treaties like APAEC can enforce long-term decarbonization mandates",
+        "impacts": ["Scenario coherence", "Port interoperability", "Equity inclusion"]
+      }
+    ],
+    "shallow": [
+      {
+        "id": "bond_market_trend",
+        "description": "Investor appetite for sovereign green bonds",
+        "impacts": ["Retrofit finance", "Equity gap mitigation"]
+      },
+      {
+        "id": "public_support",
+        "description": "Societal willingness to absorb green shipping premiums",
+        "impacts": ["Policy legitimacy", "Adoption curve"]
+      }
+    ]
+  },
+  "temporal_transitions": {
+    "2025": {
+      "global_context": "IMO mandates ratified",
+      "scenario_shift": {
+        "Coordinated Green Renaissance": "+5% probability",
+        "Polarized Greenwave": "-3%"
+      }
+    },
+    "2028": {
+      "global_context": "Recession hits industrial finance",
+      "scenario_shift": {
+        "Polarized Greenwave": "+10%",
+        "Hydrogen Acceleration Bloc": "-10%"
+      }
+    },
+    "2032": {
+      "global_context": "Green corridors deliver job growth",
+      "scenario_shift": {
+        "Coordinated Green Renaissance": "+7%",
+        "Hydrogen Acceleration Bloc": "+3%"
+      }
+    }
+  },
+  "resilience_curves": {
+    "policy_durability": {
+      "threshold": 60,
+      "curve": "sigmoid",
+      "description": "Policy impact decays below public legitimacy score of 60"
+    },
+    "technology_adoption": {
+      "threshold": 50,
+      "curve": "logistic",
+      "description": "Adoption of hydrogen tech accelerates rapidly after equity score crosses 50"
+    }
+  },
+  "linked_variables": [
+    "policy", "infrastructure", "equity", "finance", "technology", "emission_reduction", "resilience"
+  ]
+}

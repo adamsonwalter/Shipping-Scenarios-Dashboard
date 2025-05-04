@@ -1,0 +1,52 @@
+{
+  "dashboard": "Asia Pacific Green Shipping 2045",
+  "narratives": {
+    "Coordinated Green Renaissance": {
+      "type": "Hybrid Scenario",
+      "origin": "Deductive + Inductive",
+      "description": "A treaty-backed regional green shipping framework emerges by 2030, harmonizing fuel standards (hydrogen/ammonia) and retrofit timelines. ASEAN, Japan, and Korea lead coordinated investments through sovereign bonds and public-private partnerships. Green shipping corridors act as demonstration pilots, triggering wider participation through infrastructure emulation and societal pride. Smaller economies are included via multilateral finance mechanisms, avoiding inequality traps.",
+      "rationale": "Built on real-world coordination trends (e.g., APAEC, Singapore–Australia corridor) and scenario logic where trust and finance align. Feedback loops reinforce public legitimacy and investment confidence.",
+      "policySensitivity": true,
+      "tradeoffs": ["Slower innovation speed due to treaty consensus-building", "Standardization may restrict niche experimentation"],
+      "meta": {
+        "emission_reduction": 70,
+        "equity_score": 85,
+        "resilience_score": 80,
+        "feedback_loops": ["Policy → Infrastructure", "Society → Finance", "Equity → Adoption"]
+      }
+    },
+    "Polarized Greenwave": {
+      "type": "Hybrid Scenario",
+      "origin": "Deductive + Inductive",
+      "description": "Following a fractured global economic recovery, Asia Pacific nations split over fuel pathways. China champions ammonia, while Australia and Korea focus on hydrogen. Inter-port interoperability fails. Emissions reductions are inconsistent. Smaller ports are marginalized. Finance becomes exclusive. Green shipping becomes fragmented and tariff-exposed. Public resistance grows due to cost burdens.",
+      "rationale": "Scenario grounded in fuel competition, recession risk, and delayed port retrofits. Feedback shows how fragmentation leads to inequity and weak adoption.",
+      "policySensitivity": false,
+      "tradeoffs": ["Emission Reduction metric locked due to policy fragmentation", "Tariff risks increase for non-aligned ports"],
+      "meta": {
+        "emission_reduction": 50,
+        "equity_score": 40,
+        "resilience_score": 60,
+        "feedback_loops": ["Policy Fragmentation → Delay", "Equity Gaps → Trade Decline"]
+      }
+    },
+    "Hydrogen Acceleration Bloc": {
+      "type": "Hybrid Scenario",
+      "origin": "Deductive + Inductive",
+      "description": "In 2027, a major green hydrogen breakthrough drives cost parity. A private-sector-led wave of retrofits follows, centered around Singapore, Busan, and Yokohama (Hydrogen Triangle). Governments codify emerging norms late. Equity lags as mid-tier and small ports fall behind. Public support grows reactively. Some stranded ammonia investments are salvaged via flexible conversion tech.",
+      "rationale": "Grounded in technology-first scenario logic and real-world dual-fuel experimentation. Emphasizes risk of inequity and private governance dominance.",
+      "policySensitivity": true,
+      "tradeoffs": ["Equity gap widens as private capital dominates", "Standards set by consortia, not governments"],
+      "meta": {
+        "emission_reduction": 80,
+        "equity_score": 55,
+        "resilience_score": 70,
+        "feedback_loops": ["Technology → Emission Reduction", "Finance → Resilience", "Equity Lags → Instability"]
+      }
+    }
+  },
+  "integration_guidance": {
+    "embed_into_dashboard": true,
+    "use_for": ["metadata tooltips", "scenario summaries", "dashboard onboarding", "policy simulations"],
+    "recommended_fields": ["description", "rationale", "tradeoffs", "feedback_loops"]
+  }
+}

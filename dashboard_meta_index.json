@@ -1,0 +1,39 @@
+{
+  "dashboard_name": "Asia Pacific Green Shipping 2045",
+  "meta_index": [
+    {
+      "id": "dashboard_predictive_model",
+      "title": "Predictive Model",
+      "description": "Causal graph, interventions, feedback loops, scenario probabilities",
+      "variables": ["policy", "infrastructure", "equity", "finance", "technology", "emission_reduction", "resilience"],
+      "file": "Dashboard Predictive Model",
+      "used_for": ["scenario engine", "graph visualizations", "policy simulations"]
+    },
+    {
+      "id": "dashboard_narratives_metadata",
+      "title": "Narratives and Metadata",
+      "description": "Human-readable scenario descriptions, rationale, trade-offs",
+      "variables": ["scenario", "feedback_loops", "policySensitivity"],
+      "file": "Dashboard Narratives Metadata",
+      "used_for": ["tooltip onboarding", "AI LLM prompts", "scenario summaries"]
+    },
+    {
+      "id": "dashboard_uncertainty_and_time",
+      "title": "Uncertainty and Temporal Dynamics",
+      "description": "Deep/shallow uncertainty mapping, scenario evolution over time, threshold effects",
+      "variables": ["equity", "public_support", "technology_adoption", "policy_durability"],
+      "file": "Dashboard Uncertainty And Time",
+      "used_for": ["timeline sliders", "risk heatmaps", "resilience analytics"]
+    }
+  ],
+  "integration": {
+    "unified_variable_set": ["policy", "infrastructure", "equity", "finance", "technology", "emission_reduction", "resilience"],
+    "dashboard_roles": {
+      "policy": "Driver and slider input",
+      "emission_reduction": "Primary outcome metric",
+      "equity": "Outcome and feedback influencer",
+      "resilience": "Outcome and stress buffer"
+    },
+    "notes": "All files use shared variable references and can be joined using scenario ID or variable key."
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "nodes": [
+    {"id": "Policy", "type": "driver"},
+    {"id": "Infrastructure", "type": "mediator"},
+    {"id": "Finance", "type": "driver"},
+    {"id": "Technology", "type": "driver"},
+    {"id": "Society", "type": "mediator"},
+    {"id": "Equity", "type": "outcome"},
+    {"id": "EmissionReduction", "type": "outcome"},
+    {"id": "Resilience", "type": "outcome"}
+  ],
+  "edges": [
+    {"from": "Policy", "to": "Infrastructure", "weight": 0.7},
+    {"from": "Infrastructure", "to": "Equity", "weight": 0.5},
+    {"from": "Finance", "to": "Infrastructure", "weight": 0.6},
+    {"from": "Society", "to": "Finance", "weight": 0.6},
+    {"from": "Equity", "to": "Society", "weight": 0.5},
+    {"from": "Technology", "to": "EmissionReduction", "weight": 0.8},
+    {"from": "Finance", "to": "Resilience", "weight": 0.5},
+    {"from": "Equity", "to": "Resilience", "weight": 0.4}
+  ],
+  "feedback_loops": [
+    {
+      "name": "Policy Reinforcement Loop",
+      "type": "reinforcing",
+      "path": ["Policy", "Infrastructure", "Equity", "Society", "Finance", "Infrastructure"]
+    },
+    {
+      "name": "Technology Impact Loop",
+      "type": "reinforcing",
+      "path": ["Technology", "EmissionReduction", "Society"]
+    }
+  ],
+  "interventions": [
+    {
+      "name": "Regional Green Treaty",
+      "appliesTo": ["Policy", "Finance"],
+      "effect": "+0.15 likelihood to Harmonized Transition",
+      "tradeoff": "Constrained innovation speed"
+    },
+    {
+      "name": "Hydrogen Breakthrough",
+      "appliesTo": ["Technology"],
+      "effect": "+0.2 to EmissionReduction, -0.1 to Equity",
+      "tradeoff": "Equity lag and stranded ammonia investment"
+    },
+    {
+      "name": "Green Bonds with Job KPIs",
+      "appliesTo": ["Finance", "Society"],
+      "effect": "+0.1 to Equity and Resilience",
+      "tradeoff": "High dependency on job metric performance"
+    }
+  ],
+  "scenario_likelihoods": {
+    "Coordinated Green Renaissance": 0.40,
+    "Polarized Greenwave": 0.30,
+    "Hydrogen Acceleration Bloc": 0.30
+  },
+  "transition_dynamics": [
+    {
+      "condition": "Recession",
+      "effect": {
+        "Polarized Greenwave": "+0.1",
+        "Hydrogen Acceleration Bloc": "-0.1"
+      }
+    },
+    {
+      "condition": "Successful Treaty",
+      "effect": {
+        "Coordinated Green Renaissance": "+0.15",
+        "Others": "-0.075"
+      }
+    }
+  ]
+}
