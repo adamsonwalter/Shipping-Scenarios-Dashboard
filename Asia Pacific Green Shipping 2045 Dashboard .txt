@@ -1,0 +1,151 @@
+# Project Handoff: Asia Pacific Green Shipping 2045 Dashboard
+
+## 🔧 Application Summary
+- **Platform**: Streamlit (Python)
+- **Project Name**: green-shipping-dashboard
+- **Purpose**: Strategic scenario explorer for decarbonizing Asia Pacific shipping by 2045
+- **Current Status**: MVP fully functional with metrics, policy slider, and scenario comparison
+- **Deployment Target**: Streamlit Cloud (via GitHub Desktop)
+
+---
+
+## 🎯 Functional Overview
+
+### Functional Goals
+- Allow users to explore three long-range maritime decarbonization scenarios
+- Adjust outcomes via policy intensity slider
+- Visualize comparative effects of each scenario
+- Deliver structured questions to provoke strategic insight
+
+### Key Features
+- Scenario dropdown selector
+- Sidebar policy support slider (0–20%)
+- Bar chart visualizations of scenario metrics
+- Multi-scenario comparison chart
+- Reflective questions based on scenario selection
+
+### Dependencies
+```txt
+streamlit
+pandas
+altair
+```
+
+---
+
+## 📐 Core Computational Logic & Scenario Dynamics
+
+### Input Variables
+```python
+scenario = selectbox([...])        # One of 3 predefined scenarios
+policy_boost = slider(0 to 20)     # Percent boost to policy support
+```
+
+### Base Metrics
+```python
+scenario_data = {
+    "Coordinated Green Renaissance": {
+        "emission_reduction": 70,
+        "equity_score": 85,
+        "resilience_score": 80
+    },
+    "Polarized Greenwave": {
+        "emission_reduction": 50,
+        "equity_score": 40,
+        "resilience_score": 60
+    },
+    "Hydrogen Acceleration Bloc": {
+        "emission_reduction": 80,
+        "equity_score": 55,
+        "resilience_score": 70
+    }
+}
+```
+
+### Metric Adjustment Formulas
+```python
+if scenario == "Polarized Greenwave":
+    adjusted_emission = base_emission  # Locked due to fragmentation
+else:
+    adjusted_emission = base_emission + policy_boost
+
+adjusted_equity = base_equity + policy_boost // 2
+adjusted_resilience = base_resilience + policy_boost // 2
+```
+
+### Scenario Logic Summary
+| Scenario                    | Policy Boost Applied | Locked Metric        | Main Trade-off                   |
+|----------------------------|-----------------------|-----------------------|----------------------------------|
+| Coordinated Green Renaissance | Yes                 | None                  | Slower innovation pace           |
+| Polarized Greenwave        | Partial              | Emission Reduction     | Equity and emissions diverge     |
+| Hydrogen Acceleration Bloc | Yes                  | None                  | Innovation vs. equity tradeoff   |
+
+---
+
+## 🔁 Feedback Loops (Theoretical Logic)
+
+### Coordinated Green Renaissance
+- Policy → Infrastructure (↑0.7)
+- Society → Finance (↑0.6)
+- Equity → Adoption (↑0.5)
+
+### Polarized Greenwave
+- Policy Fragmentation → Emission Delay (↓0.6)
+- Equity Gaps → Trade Decline (↓0.5)
+
+### Hydrogen Acceleration Bloc
+- Technology → Emission Reduction (↑0.8)
+- Finance → Resilience (↑0.5)
+- Equity Lags → Instability (↓0.3)
+
+---
+
+## 🧑‍🎨 Design & UX Strategy
+- **Layout**: Streamlit wide mode; bar charts centered; sidebar controls
+- **Visuals**: Altair color-encoded bars, minimal aesthetic
+- **Missing**: Dark/light theme toggle, animations, responsive transitions
+- **User Flow**: Scenario select → adjust policy → read results → compare
+
+### Suggested Enhancements
+- Replace Altair with Plotly or D3.js
+- Apply Bento Grid or Minimalist Interactive visual style
+- Add timeline sliders (e.g., 2025–2045 projections)
+- Export functionality (PNG/PDF)
+
+---
+
+## 🧱 Folder Structure
+```
+green-shipping-dashboard/
+├── app.py
+├── requirements.txt
+└── README.md
+```
+
+### README Deployment Instructions
+```markdown
+## 🚀 Run Locally
+pip install -r requirements.txt
+streamlit run app.py
+
+## ☁️ Deploy to Streamlit Cloud
+1. Push repo to GitHub
+2. Connect via https://streamlit.io/cloud
+3. Auto-deploy from `app.py`
+```
+
+---
+
+## 🧠 Interpretation for Future Development
+- Maintain logical control over metric behavior
+- All future visuals (timeline, map overlays) must adhere to these scenario calculations
+- Maintain adjustability via slider inputs or parameterized data inputs (e.g., future data uploads)
+
+---
+
+## 🔄 Summary of Next Features
+- Refactor into component modules (charts, data, controls)
+- Add upload/import for user-defined metric sets
+- Map-based corridor visuals (e.g., green corridor overlays)
+- Scenario save/load for strategy iteration tracking
+- Long-term: tie to OpenAI/Gemini LLM for generative narrative output
